@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat the CSM | 战胜连续洗牌机：21点专业博弈指南</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0B0F19',
+                        cardbg: '#131B2E',
+                        accent: '#10B981', // 翡翠绿，代表胜率与财运
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 antialiased selection:bg-accent selection:text-white">
+
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkbg/80 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center border border-accent/40 text-accent font-bold text-xl">
+                    ♠
+                </div>
+                <span class="font-bold text-lg tracking-wider bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent" data-lang-zh="Beat the CSM" data-lang-en="Beat the CSM">Beat the CSM</span>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                    <a href="#about" class="hover:text-accent transition" data-lang-zh="书籍介绍" data-lang-en="About">书籍介绍</a>
+                    <a href="#highlights" class="hover:text-accent transition" data-lang-zh="核心亮点" data-lang-en="Highlights">核心亮点</a>
+                    <a href="#sample" class="hover:text-accent transition" data-lang-zh="免费试读" data-lang-en="Sample">免费试读</a>
+                </nav>
+                
+                <!-- 中英文切换按钮 -->
+                <button onclick="toggleLanguage()" id="lang-btn" class="px-3.5 py-1.5 text-xs font-semibold rounded-full border border-gray-700 bg-cardbg hover:border-accent transition flex items-center space-x-1.5">
+                    <span>🌐</span>
+                    <span id="lang-text">EN / 中文</span>
+                </button>
+
+                <a href="#purchase" class="hidden sm:inline-block px-5 py-2.5 rounded-lg bg-accent text-darkbg font-bold text-sm hover:bg-accentHover transition shadow-lg shadow-accent/20" data-lang-zh="立即购买" data-lang-en="Get the Book">立即购买</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主视觉 / Hero 区域 -->
+    <section class="relative overflow-hidden py-24 lg:py-32 border-b border-gray-800/60">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.08),transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8 text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/30 text-accent text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                        <span data-lang-zh="颠覆传统博彩认知的硬核巨作" data-lang-en="A Paradigm Shift in Advantage Play">颠覆传统博彩认知的硬核巨作</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                        <span data-lang-zh="打破连续洗牌机不可战胜的神话" data-lang-en="Beating the Unbeatable: Mastering Continuous Shuffling Machines">打破连续洗牌机不可战胜的神话</span>
+                    </h1>
+                    
+                    <p class="text-lg text-gray-400 max-w-2xl leading-relaxed" data-lang-zh="当现代赌场全面普及 CSM（连续洗牌机）宣告传统算牌死刑时，真正的职业优势玩家找到了新的数学漏洞与破局之道。本书带你直击底层逻辑，揭开 CSM 内部运作规律与实战微小期望捕获技术。" data-lang-en="When modern casinos adopted Continuous Shuffling Machines (CSMs) to defeat traditional card counters, professional advantage players found new mathematical vulnerabilities. Discover the insider framework to exploit CSMs and capture positive expectation.">
+                        当现代赌场全面普及 CSM（连续洗牌机）宣告传统算牌死刑时，真正的职业优势玩家找到了新的数学漏洞与破局之道。本书带你直击底层逻辑，揭开 CSM 内部运作规律与实战微小期望捕获技术。
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                        <a href="#purchase" class="px-8 py-4 rounded-xl bg-accent text-darkbg font-bold text-center hover:bg-accentHover transition shadow-xl shadow-accent/25 flex items-center justify-center space-x-2">
+                            <span data-lang-zh="在 Amazon 获取纸质/电子版" data-lang-en="Get on Amazon">在 Amazon 获取纸质/电子版</span>
+                            <span>→</span>
+                        </a>
+                        <a href="#sample" class="px-8 py-4 rounded-xl bg-cardbg border border-gray-700 text-gray-300 font-semibold text-center hover:bg-gray-800 transition" data-lang-zh="获取免费样章" data-lang-en="Download Free Sample">获取免费样章</a>
+                    </div>
+                </div>
+
+                <!-- 书籍立体模型示意图 -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-sm bg-gradient-to-br from-cardbg to-[#0d1322] p-8 rounded-2xl border border-gray-700/80 shadow-2xl relative">
+                        <div class="absolute -top-3 -right-3 bg-accent text-darkbg text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Bestseller</div>
+                        <div class="aspect-[3/4] bg-gradient-to-tr from-gray-900 to-gray-800 rounded-lg border border-gray-700 p-6 flex flex-col justify-between shadow-inner">
+                            <div>
+                                <div class="text-accent text-xs font-bold tracking-widest uppercase mb-2">Advanced Blackjack Strategy</div>
+                                <h3 class="text-2xl font-bold text-white leading-snug" data-lang-zh="战胜 CSM 连续洗牌机" data-lang-en="Beating the CSM">战胜 CSM 连续洗牌机</h3>
+                            </div>
+                            <div class="space-y-2 pt-6 border-t border-gray-800">
+                                <p class="text-xs text-gray-400" data-lang-zh="作者：专业优势玩家矩阵" data-lang-en="By Professional Advantage Players">作者：专业优势玩家矩阵</p>
+                                <div class="flex items-center space-x-1 text-yellow-400 text-xs">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                    <span class="text-gray-400 ml-1">(5.0)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心亮点 -->
+    <section id="highlights" class="py-24 bg-cardbg/30 border-b border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-3xl font-bold tracking-tight" data-lang-zh="为什么这本书能打破行业僵局？" data-lang-en="Why This Book Changes Everything">为什么这本书能打破行业僵局？</h2>
+                <p class="text-gray-400" data-lang-zh="拒绝玄学，用严密的概率论与机器工程学视角解构赌场自动化发牌设备。" data-lang-en="No mysticism. Pure probability and engineering analysis of automated casino shuffling tech.">拒绝玄学，用严密的概率论与机器工程学视角解构赌场自动化发牌设备。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 space-y-4 hover:border-accent/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-2xl">📊</div>
+                    <h3 class="text-xl font-bold" data-lang-zh="10万次模拟测试复盘" data-lang-en="100,000+ Simulation Data">10万次模拟测试复盘</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-lang-zh="不谈空洞理论，所有结论均基于海量洗牌模型回测与实战数据支撑。" data-lang-en="Backed by extensive computer simulations and real-world backtesting models.">不谈空洞理论，所有结论均基于海量洗牌模型回测与实战数据支撑。</p>
+                </div>
+
+                <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 space-y-4 hover:border-accent/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-2xl">⚙️</div>
+                    <h3 class="text-xl font-bold" data-lang-zh="解析机器盲区与节奏" data-lang-en="Machine Blind Spots & Timing">解析机器盲区与节奏</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-lang-zh="深入剖析主流连续洗牌机的内部物理结构和发牌循环规律，寻找人为可干预的破绽。" data-lang-en="Deep dive into the physical mechanics and cyclic patterns of popular CSM models.">深入剖析主流连续洗牌机的内部物理结构和发牌循环规律，寻找人为可干预的破绽。</p>
+                </div>
+
+                <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 space-y-4 hover:border-accent/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-2xl">🛡️</div>
+                    <h3 class="text-xl font-bold" data-lang-zh="职业资金与风险控制" data-lang-en="Bankroll & Risk Management">职业资金与风险控制</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-lang-zh="教你如何在极微弱的优势下搭配凯利公式，实现长期正向收益并安全隐匿。" data-lang-en="Master Kelly Criterion applications designed specifically for micro-edge environments.">教你如何在极微弱的优势下搭配凯利公式，实现长期正向收益并安全隐匿。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 试读表单区域 -->
+    <section id="sample" class="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-cardbg to-[#121c30] p-8 sm:p-12 rounded-3xl border border-gray-800 shadow-2xl text-center space-y-6">
+            <h2 class="text-3xl font-bold" data-lang-zh="免费获取本书第一章精华样章" data-lang-en="Get a Free Sample Chapter">免费获取本书第一章精华样章</h2>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm" data-lang-zh="留下您的邮箱，我们立刻将完整 PDF 样章发送给您，先睹为快。" data-lang-en="Enter your email to instantly receive the first chapter directly to your inbox.">留下您的邮箱，我们立刻将完整 PDF 样章发送给您，先睹为快。</p>
+            
+            <form onsubmit="handleSubscribe(event)" class="flex flex-col sm:flex-row justify-center max-w-md mx-auto gap-3">
+                <input type="email" required placeholder="Enter your email address..." class="px-4 py-3.5 rounded-xl bg-darkbg border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-accent flex-grow text-sm">
+                <button type="submit" class="px-6 py-3.5 rounded-xl bg-accent text-darkbg font-bold hover:bg-accentHover transition text-sm whitespace-nowrap" data-lang-zh="立即发送" data-lang-en="Send Sample">立即发送</button>
+            </form>
+            <p id="success-msg" class="text-accent text-sm hidden font-medium" data-lang-zh="✓ 发送成功！请检查您的收件箱。" data-lang-en="✓ Success! Check your inbox.">✓ 发送成功！请检查您的收件箱。</p>
+        </div>
+    </section>
+
+    <!-- 购买引导 / Purchase -->
+    <section id="purchase" class="py-20 border-t border-gray-800/60 bg-darkbg text-center">
+        <div class="max-w-4xl mx-auto px-4 space-y-8">
+            <h2 class="text-3xl font-extrabold" data-lang-zh="准备好开启你的职业博弈新维度了吗？" data-lang-en="Ready to Elevate Your Game?">准备好开启你的职业博弈新维度了吗？</h2>
+            <p class="text-gray-400 max-w-xl mx-auto" data-lang-zh="本书现已在 Amazon 正式上架。点击下方按钮即可前往购买。" data-lang-en="Now available on Amazon worldwide. Grab your copy today.">本书现已在 Amazon 正式上架。点击下方按钮即可前往购买。</p>
+            <div>
+                <a href="https://www.amazon.com" target="_blank" class="inline-block px-10 py-5 rounded-2xl bg-accent text-darkbg font-extrabold text-lg hover:bg-accentHover transition shadow-xl shadow-accent/30" data-lang-zh="前往 Amazon 购买本书" data-lang-en="Buy Now on Amazon">前往 Amazon 购买本书</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-12 border-t border-gray-900 bg-[#070a12] text-gray-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+            <p>&copy; 2026 Beat the CSM Book. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 简易中英文切换脚本 -->
+    <script>
+        let currentLang = 'zh';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            const elements = document.querySelectorAll('[data-lang-zh]');
+            
+            elements.forEach(el => {
+                el.textContent = el.getAttribute(`data-lang-${currentLang}`);
+            });
+
+            document.getElementById('lang-text').textContent = currentLang === 'zh' ? 'EN / 中文' : '中文 / EN';
+            document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
+        }
+
+        function handleSubscribe(e) {
+            e.preventDefault();
+            document.getElementById('success-msg').classList.remove('hidden');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
